@@ -124,6 +124,8 @@ const run = async () => {
             translations: {
                 // setando  names das actions
                 actions: {
+                    search : 'Pesquisar',
+                    list: 'Lista',
                     new: 'Novo',
                     edit: 'Editar',
                     delete: 'Excluir',
