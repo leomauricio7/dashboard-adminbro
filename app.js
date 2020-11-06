@@ -47,6 +47,10 @@ const run = async () => {
         name: 'Serviços',
         icon: 'Accessibility',
     }
+    const createParent = {
+        name: 'Create',
+        icon: 'fa fa-coffee',
+    }
     // options do menu/models  
     const AdminBroOptions = {
         // cada recouser é uma configuração para uma model
@@ -54,6 +58,7 @@ const run = async () => {
             {
                 resource: User,
                 options: {
+                    parent: createParent,
                     // setando o grupo de navegacao
                     navigation: contentNavigation,
                     //setando as propriedades customizdas da model
@@ -136,8 +141,15 @@ const run = async () => {
                 }
             }
         },
+        //setando component dashboard
+        dashboard: {
+            handler: async () => {
+                return { user: 'Leonardo Mauricio' }
+            },
+            component: AdminBro.bundle('./dashboard')
+        },
         //path padrão
-        rootPath: '/admin'
+        rootPath: '/admin',
     }
 
     // passando as options para o AdminBrow e crindo um objeto
